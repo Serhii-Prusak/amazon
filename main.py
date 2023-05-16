@@ -52,35 +52,31 @@ for product in products:
 
     asection = soup.select('div.a-section')
     for a in asection:
-        # print(a.text)
         if "priceAmount" in a.text:
-            # print('priceAmount found')
-            # print(a.text.index("priceAmount"))
-            # print(a.text.index("currencySymbol"))
+
+            # Find new price in the parsed document ('priceAmount':xx.xx) and add it to new prices
             new_price = float(a.text[a.text.index("priceAmount") + 13:a.text.index("currencySymbol") - 2])
-            # print(new_price)
             new_prices.append(new_price)
+
+            # check if data if product is in the file or no
             if product['name'] in product_list:
-                # print('In')
                 df.iloc[df.index[df['Product'] == product['name']], 2] = new_price
-                # print(df.iloc[df.index[df['Product'] == product['name']], 4])
                 if df.iloc[df.index[df['Product'] == product['name']], 4].sum() > new_price:
                     df.iloc[df.index[df['Product'] == product['name']], 4] = new_price
             else:
-                # print('New')
                 dict_add = {'Product': product['name'], 'OldPrice': new_price, 'NewPrice': new_price, 'Difference': 0, 'Minimum': new_price}
                 df.loc[len(df)] = dict_add
             break
     i += 1
+
     # Quit the WebDriver
     driver.quit()
-    # print('----------------------------------')
 
-
-# Create a Pandas DataFrame with the product names and prices
-
+# Update the difference betweeen New and Old prices in our file 
 df['Difference'] = df['NewPrice'] - df['OldPrice']
 
+# Show the result df
 print(df)
 
+# Save df to csv
 df.to_csv('prices.csv', index=False)
