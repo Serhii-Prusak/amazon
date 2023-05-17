@@ -1,5 +1,3 @@
-import requests
-import json
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -14,7 +12,15 @@ products = [
     {'name': 'Arkham Horror: Carcosa - Investigators', 'url': 'https://www.amazon.de/dp/B09V1TLZD2'},
     {'name': 'Arkham Horror: Carcosa - Capmaign', 'url': 'https://www.amazon.de/dp/B09V1V2MZW'},
     {'name': 'Arkham Horror: Forgotten Age - Expansion', 'url': 'https://www.amazon.de/dp/B07B8SJ31L'},
-    {'name': 'Arkham Horror: The Circle Undone - Expansion', 'url': 'https://www.amazon.de/dp/B07MZCWJMP'}
+    {'name': 'Arkham Horror: The Circle Undone - Expansion', 'url': 'https://www.amazon.de/dp/B07MZCWJMP'},
+    {'name': 'The Cartographers', 'url': 'https://www.amazon.de/dp/B07ZQPY1TX'},
+    {'name': 'Codenames Duet', 'url': 'https://www.amazon.de/dp/B072J234ZF'},
+    {'name': 'Welcome To', 'url': 'https://www.amazon.de/dp/B09T3K5TZL'},
+    {'name': 'Pixel Tactics', 'url': 'https://www.amazon.de/dp/B015482LJU'},
+    {'name': 'Sagrada', 'url': 'https://www.amazon.de/dp/B07CLRY89M'},
+    {'name': 'Boss Monster', 'url': 'https://www.amazon.de/dp/B01BLNVW24'},
+    {'name': 'Splendor', 'url': 'https://www.amazon.de/dp/B00ORBVDNQ'},
+    {'name': 'Terra Nova', 'url': 'https://www.amazon.de/dp/B0B2TW65CK'}
 ]
 
 # Configure Selenium options
@@ -46,16 +52,19 @@ for product in products:
     html = driver.page_source
 
     soup = BeautifulSoup(html, features="html.parser")
-    with open(f'html/html{i}.txt' , 'w') as f:
+    with open(f'html/html{i}.txt', 'w') as f:
         f.write(soup.prettify())
     # soup.prettify()
 
     asection = soup.select('div.a-section')
     for a in asection:
+
+        data = a.text
+
         if "priceAmount" in a.text:
 
             # Find new price in the parsed document ('priceAmount':xx.xx) and add it to new prices
-            new_price = float(a.text[a.text.index("priceAmount") + 13:a.text.index("currencySymbol") - 2])
+            new_price = float(data[data.index("priceAmount") + 13:data.index("currencySymbol") - 2])
             new_prices.append(new_price)
 
             # check if data if product is in the file or no
