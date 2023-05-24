@@ -11,8 +11,6 @@ products = [
     {'name': 'Arkham Horror: Dunwich - Campaign', 'url': 'https://www.amazon.de/dp/B09M4GQVH5'},
     {'name': 'Arkham Horror: Carcosa - Investigators', 'url': 'https://www.amazon.de/dp/B09V1TLZD2'},
     {'name': 'Arkham Horror: Carcosa - Capmaign', 'url': 'https://www.amazon.de/dp/B09V1V2MZW'},
-    {'name': 'Arkham Horror: Forgotten Age - Expansion', 'url': 'https://www.amazon.de/dp/B07B8SJ31L'},
-    {'name': 'Arkham Horror: The Circle Undone - Expansion', 'url': 'https://www.amazon.de/dp/B07MZCWJMP'},
     {'name': 'The Cartographers', 'url': 'https://www.amazon.de/dp/B07ZQPY1TX'},
     {'name': 'Codenames Duet', 'url': 'https://www.amazon.de/dp/B072J234ZF'},
     {'name': 'Welcome To', 'url': 'https://www.amazon.de/dp/B09T3K5TZL'},
@@ -20,7 +18,8 @@ products = [
     {'name': 'Sagrada', 'url': 'https://www.amazon.de/dp/B07CLRY89M'},
     {'name': 'Boss Monster', 'url': 'https://www.amazon.de/dp/B01BLNVW24'},
     {'name': 'Splendor', 'url': 'https://www.amazon.de/dp/B00ORBVDNQ'},
-    {'name': 'Terra Nova', 'url': 'https://www.amazon.de/dp/B0B2TW65CK'}
+    {'name': 'Terra Nova', 'url': 'https://www.amazon.de/dp/B0B2TW65CK'},
+    {'name': 'Boss Monster - Big Box', 'url': 'https://www.amazon.de/dp/B09T3LCP1B'}
 ]
 
 # Configure Selenium options
@@ -28,7 +27,7 @@ chrome_options = Options()
 chrome_options.add_argument("--headless")  # Run Chrome in headless mode (without opening a browser window)
 
 # Set the path to the chromedriver executable
-webdriver_service = Service('/usr/local/bin')  # Replace 'path_to_chromedriver' with the actual path
+webdriver_service = Service('/usr/local/bin')  
 
 # Create an empty list to store the prices
 new_prices = []
