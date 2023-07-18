@@ -1,14 +1,20 @@
-Product,OldPrice,NewPrice,Difference,Minimum
-Arkham Horror: Dunwich - Investigators,45.2,45.2,0.0,45.17
-Arkham Horror: Dunwich - Campaign,66.0,66.0,0.0,66.0
-Arkham Horror: Carcosa - Investigators,45.98,45.98,0.0,45.98
-Arkham Horror: Carcosa - Capmaign,67.67,67.67,0.0,67.67
-The Cartographers,16.99,16.99,0.0,16.99
-Codenames Duet,18.99,18.99,0.0,18.99
-Pixel Tactics,14.03,14.03,0.0,12.99
-Sagrada,29.99,29.99,0.0,29.99
-Boss Monster,14.99,14.99,0.0,13.76
-Splendor,36.58,36.58,0.0,33.95
-Terra Nova,37.99,37.99,0.0,37.99
-Boss Monster - Big Box,36.99,36.99,0.0,36.99
-Welcome To,20.99,20.99,0.0,20.99
+Product,Old_Price,New_Price,Difference,Minimum_Price,Difference_Minimum,Comment
+The_Cartographers,18.29,18.29,0.0,13.86,4.43,Product was removed from tracking
+Harry_Potter_DADA,19.69,19.69,0.0,13.69,0.0,-
+Imperium_Classics,25.19,25.19,0.0,25.19,0.0,-
+AirTag,31.9,31.9,0.0,31.9,0.0,-
+Andor,31.99,31.99,0.0,28.59,3.3999999999999986,Product was removed from tracking
+Galaxy_Tracker,35.01,35.01,0.0,35.01,0.0,-
+Arkham_Horror:Dunwich-Investigators,39.84,39.84,0.0,37.07,2.770000000000003,-
+Pandemic_Iberia,39.99,39.99,0.0,39.99,0.0,-
+Wingspan,39.99,39.99,0.0,39.99,0.0,-
+Arkham_Horror:Carcosa-Investigators,49.99,49.99,0.0,45.98,4.010000000000005,-
+Twilight_Inscription,54.3,54.3,0.0,54.3,0.0,-
+Marco_Polo,54.99,54.99,0.0,54.99,0.0,-
+Legacy_of_Dragonholt,57.12,57.12,0.0,41.24,15.879999999999995,-
+Gloomhaven-Jaws_of_the_lion,58.49,58.49,0.0,46.39,12.100000000000001,-
+Planet_Unknown,63.9,63.9,0.0,62.4,1.5,-
+Arkham_Horror:Dunwich-Campaign,66.0,66.0,0.0,63.13,2.8699999999999974,-
+7th_Continent,69.0,69.0,0.0,69.0,0.0,-
+Arkham_Horror:Carcosa-Capmaign,71.34,71.23,-0.10999999999999943,67.51,3.719999999999999,-
+Sleeping_Gods,98.79,98.79,0.0,96.21,2.5800000000000125,-
