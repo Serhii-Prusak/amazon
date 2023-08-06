@@ -66,5 +66,33 @@
    {
       "name": "Marco_Polo",
       "url": "https://www.amazon.de/dp/B07NS8B9NL"
+   },
+   {
+      "name": "Der_Kartograph",
+      "url": "https://www.amazon.de/dp/B07ZQPY1TX"
+   },
+   {
+      "name": "Andor",
+      "url": "https://www.amazon.de/dp/B0088UZZJK"
+   },
+   {
+      "name": "Viticulture",
+      "url": "https://www.amazon.de/dp/B01CCRAMOC"
+   },
+   {
+      "name": "Castles_of_Burgundy",
+      "url": "https://www.amazon.de/dp/B07R5ZH6FQ"
+   },
+   {
+      "name": "Star_Wars-Outer_Rim",
+      "url": "https://www.amazon.de/dp/B07WKJBW89"
+   },
+   {
+      "name": "Dune_Imperium",
+      "url": "https://www.amazon.de/dp/B08JHB9V72"
+   },
+   {
+      "name": "Spirit_Island",
+      "url": "https://www.amazon.de/dp/B07GPZF3SL"
    }
  ]

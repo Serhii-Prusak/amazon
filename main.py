@@ -5,6 +5,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 import pandas as pd
 import json
+import time
+
+# Define start of the program
+start = time.time()
 
 # Define the products and their URLs
 with open ('products.json') as f:   
@@ -67,13 +71,14 @@ for product in products:
                         df.iloc[df.index[df['Product'] == product['name']], 6] = '-'
             else:
                 df.loc[len(df)] = {
-                    'Product': product['name'], 
-                    'Old_Price': new_price, 
-                    'New_Price': new_price, 
-                    'Difference': 0, 
-                    'Minimum_Price': new_price, 
-                    'Difference_Minimun':0, 
-                    'Comment': 'New'
+                        'Product': product['name'], 
+                        'Old_Price': new_price, 
+                        'New_Price': new_price, 
+                        'Difference': 0, 
+                        'Minimum_Price': new_price, 
+                        'Difference_Minimun':0, 
+                        'Comment': 'New',
+                        'Percentage': 0
                     }
             break
     i += 1
@@ -89,7 +94,18 @@ for product in product_list:
 # Update the difference betweeen New and Old prices in our file 
 df['Difference'] = df['New_Price'] - df['Old_Price']
 df['Difference_Minimum'] = df['New_Price'] - df['Minimum_Price']
+df['Percentage'] = round(100 * df['Difference_Minimum'] / df['Minimum_Price'], 2)
 df.sort_values(['New_Price'], inplace=True, ignore_index=True, ascending=True)
+print('\n--------------------------------------------Full table-------------------------------------------------\n')    
 print(df)
+print('\n---------------------------------------------Favorite--------------------------------------------------\n')    
+print(df[(df.Percentage < 10) & (df.Percentage > 0)])
+print('\n------------------------------------------Min As Current-----------------------------------------------\n')    
+print(df[df.Percentage == 0])
 
 df.to_csv('prices.csv', index=False)
+
+total_time = time.time() - start
+print(f"TIME: {int(total_time//60):d} min and {total_time%60:.2f} sec")
+#TODO: add time and CPU check
+#TODO: update README.md
