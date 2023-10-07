@@ -1,11 +1,13 @@
-from bs4 import BeautifulSoup
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
-import pandas as pd
 import json
 import time
+
+import pandas as pd
+from bs4 import BeautifulSoup
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+# from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
 
 # Define start of the program
 start = time.time()
@@ -19,7 +21,7 @@ chrome_options = Options()
 chrome_options.add_argument("--headless")  # Run Chrome in headless mode (without opening a browser window)
 
 # Set the path to the chromedriver executable
-webdriver_service = Service('/usr/local/bin')  
+webdriver_service = Service()  
 
 # Create an empty list to store the prices
 new_prices = []
@@ -34,7 +36,7 @@ i = 1
 for product in products:
 
     # Create a new Selenium WebDriver instance
-    driver = webdriver.Chrome(service=webdriver_service, options=chrome_options)
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
 
     # Load the product page
     driver.get(product["url"])
